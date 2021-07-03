@@ -20,7 +20,7 @@ namespace BinarySearchTree
         int leftCount = 0, rightCount = 0;
 
         /// <summary>
-        /// Method to insert data in the binary search tree
+        /// Method to insert node to binary search tree
         /// </summary>
         /// <param name="item"></param>
         public void Insert(T item)
@@ -51,7 +51,15 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Method to print binary search elements
+        /// Method to get size of binary search tree
+        /// </summary>
+        public void GetSize()
+        {
+            Console.WriteLine("Size : " + (1 + this.leftCount + this.rightCount));
+        }
+
+        /// <summary>
+        /// Method to display binary search tree
         /// </summary>
         public void DisplayBST()
         {
