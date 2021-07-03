@@ -18,6 +18,7 @@ namespace BinarySearchTree
         }
 
         int leftCount = 0, rightCount = 0;
+        bool result = false;
 
         /// <summary>
         /// Method to insert node to binary search tree
@@ -75,6 +76,38 @@ namespace BinarySearchTree
                 this.rightCount++;
                 this.RightTree.DisplayBST();
             }
+        }
+
+        /// <summary>
+        /// Method to search element in binary search tree
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public bool Search(T element, BinarySearchTree<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(element))
+            {
+                Console.WriteLine("Element found " + node.NodeData);
+                result = true;
+            }
+            else
+            {
+                Console.WriteLine("Current element is " + node.NodeData + " in BST");
+            }
+            if (element.CompareTo(node.NodeData) < 0)
+            {
+                Search(element, node.LeftTree);
+            }
+            if (element.CompareTo(node.NodeData) > 0)
+            {
+                Search(element, node.RightTree);
+            }
+            return result;
         }
     }
 }
